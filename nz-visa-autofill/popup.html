@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NZ Visa Autofill</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>NZ Visa Autofill</h1>
+      <p class="subtitle">Working Holiday Visa Application</p>
+    </header>
+
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="personal">Personal</button>
+      <button class="tab-btn" data-tab="address">Address</button>
+      <button class="tab-btn" data-tab="contact">Contact</button>
+      <button class="tab-btn" data-tab="identification">ID</button>
+      <button class="tab-btn" data-tab="occupation">Occupation</button>
+      <button class="tab-btn" data-tab="health">Health</button>
+      <button class="tab-btn" data-tab="character">Character</button>
+      <button class="tab-btn" data-tab="adviser">Adviser</button>
+      <button class="tab-btn" data-tab="whs">WHS</button>
+    </div>
+
+    <!-- ===== PERSONAL TAB ===== -->
+    <div class="tab-content active" id="tab-personal">
+      <div class="field-group">
+        <label for="familyName">Family name (as in passport) <span class="required">*</span></label>
+        <input type="text" id="familyName" data-field="familyName" placeholder="e.g. huang">
+      </div>
+      <div class="field-group">
+        <label for="givenName1">Given name 1 (as in passport) <span class="required">*</span></label>
+        <input type="text" id="givenName1" data-field="givenName1" placeholder="e.g. robin">
+      </div>
+      <div class="field-group">
+        <label for="givenName2">Given name 2</label>
+        <input type="text" id="givenName2" data-field="givenName2">
+      </div>
+      <div class="field-group">
+        <label for="givenName3">Given name 3</label>
+        <input type="text" id="givenName3" data-field="givenName3">
+      </div>
+      <div class="field-group">
+        <label for="otherNames">Other names you've been known by</label>
+        <input type="text" id="otherNames" data-field="otherNames">
+      </div>
+      <div class="field-group">
+        <label for="title">Preferred title</label>
+        <select id="title" data-field="title">
+          <option value="">-- Select --</option>
+          <option value="1">Mr</option>
+          <option value="2">Mrs</option>
+          <option value="3">Ms</option>
+          <option value="4">Miss</option>
+          <option value="5">Dr</option>
+          <option value="6">Other</option>
+        </select>
+      </div>
+      <div class="field-group" id="otherTitleGroup" style="display:none;">
+        <label for="otherTitle">Other title (please specify)</label>
+        <input type="text" id="otherTitle" data-field="otherTitle">
+      </div>
+      <div class="field-group">
+        <label for="gender">Gender <span class="required">*</span></label>
+        <select id="gender" data-field="gender">
+          <option value="">-- Select --</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="dateOfBirth">Date of birth <span class="required">*</span></label>
+        <input type="text" id="dateOfBirth" data-field="dateOfBirth" placeholder="e.g. 15 June, 1998">
+        <span class="field-hint">Format: d Month, yyyy (e.g. 15 June, 1998)</span>
+      </div>
+      <div class="field-group">
+        <label for="countryOfBirth">Country of birth <span class="required">*</span></label>
+        <select id="countryOfBirth" data-field="countryOfBirth">
+          <option value="">-- Select --</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ===== ADDRESS TAB ===== -->
+    <div class="tab-content" id="tab-address">
+      <div class="field-group">
+        <label for="streetNumber">Street Number</label>
+        <input type="text" id="streetNumber" data-field="streetNumber">
+      </div>
+      <div class="field-group">
+        <label for="streetName">Street Name <span class="required">*</span></label>
+        <input type="text" id="streetName" data-field="streetName">
+      </div>
+      <div class="field-group">
+        <label for="suburb">Suburb <span class="required">*</span></label>
+        <input type="text" id="suburb" data-field="suburb">
+      </div>
+      <div class="field-group">
+        <label for="city">City <span class="required">*</span></label>
+        <input type="text" id="city" data-field="city">
+      </div>
+      <div class="field-group">
+        <label for="provinceState">Province/State</label>
+        <input type="text" id="provinceState" data-field="provinceState">
+      </div>
+      <div class="field-group">
+        <label for="postalCode">PIN/ZIP code</label>
+        <input type="text" id="postalCode" data-field="postalCode">
+      </div>
+      <div class="field-group">
+        <label for="country">Country <span class="required">*</span></label>
+        <select id="country" data-field="country">
+          <option value="">-- Select --</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ===== CONTACT TAB ===== -->
+    <div class="tab-content" id="tab-contact">
+      <div class="field-group">
+        <label for="phoneDaytime">Phone (daytime)</label>
+        <input type="text" id="phoneDaytime" data-field="phoneDaytime" placeholder="e.g. 64 4 1234567">
+      </div>
+      <div class="field-group">
+        <label for="phoneNight">Phone (night)</label>
+        <input type="text" id="phoneNight" data-field="phoneNight" placeholder="e.g. 64 4 1234567">
+      </div>
+      <div class="field-group">
+        <label for="phoneMobile">Phone (mobile)</label>
+        <input type="text" id="phoneMobile" data-field="phoneMobile" placeholder="e.g. 64 21 1234567">
+      </div>
+      <div class="field-group">
+        <label for="fax">Fax</label>
+        <input type="text" id="fax" data-field="fax">
+      </div>
+      <div class="field-group">
+        <label for="email">Email address <span class="required">*</span></label>
+        <input type="email" id="email" data-field="email" placeholder="e.g. your@email.com">
+      </div>
+      <div class="field-group">
+        <label for="hasAgent">Represented by an immigration adviser? <span class="required">*</span></label>
+        <select id="hasAgent" data-field="hasAgent">
+          <option value="">-- Select --</option>
+          <option value="No">No</option>
+          <option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="hasCreditCard">Visa/MasterCard available for payment? <span class="required">*</span></label>
+        <select id="hasCreditCard" data-field="hasCreditCard">
+          <option value="">-- Select --</option>
+          <option value="No">No</option>
+          <option value="Yes">Yes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ===== IDENTIFICATION TAB ===== -->
+    <div class="tab-content" id="tab-identification">
+      <h3 style="margin-top:0;font-size:14px;color:#1a5276;">Passport Details</h3>
+      <div class="field-group">
+        <label for="passportNumber">Passport Number <span class="required">*</span></label>
+        <input type="text" id="passportNumber" data-field="passportNumber">
+      </div>
+      <div class="field-group">
+        <label for="confirmPassportNumber">Re-enter Passport Number <span class="required">*</span></label>
+        <input type="text" id="confirmPassportNumber" data-field="confirmPassportNumber">
+      </div>
+      <div class="field-group">
+        <label for="passportExpiryDate">Passport Expiry Date <span class="required">*</span></label>
+        <input type="text" id="passportExpiryDate" data-field="passportExpiryDate" placeholder="e.g. 15 June, 2028">
+        <span class="field-hint">Format: d Month, yyyy (e.g. 15 June, 2028)</span>
+      </div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
+      <h3 style="font-size:14px;color:#1a5276;">Second Form of Identification</h3>
+      <div class="field-group">
+        <label for="secondIdType">Identification Type</label>
+        <select id="secondIdType" data-field="secondIdType">
+          <option value="">-- Select --</option>
+          <option value="1">Driver License</option>
+          <option value="2">Birth Certificate</option>
+          <option value="3">National ID</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label for="secondIdIssueDate">Date Document was Issued</label>
+        <input type="text" id="secondIdIssueDate" data-field="secondIdIssueDate" placeholder="e.g. 15 March, 2020">
+        <span class="field-hint">Format: d Month, yyyy</span>
+      </div>
+      <div class="field-group">
+        <label for="secondIdExpiryDate">Expiry Date of Document (where applicable)</label>
+        <input type="text" id="secondIdExpiryDate" data-field="secondIdExpiryDate" placeholder="e.g. 15 March, 2030">
+        <span class="field-hint">Format: d Month, yyyy</span>
+      </div>
+    </div>
+
+    <!-- ===== OCCUPATION TAB ===== -->
+    <div class="tab-content" id="tab-occupation">
+      <p style="font-size:12px;color:#666;margin-bottom:10px;">
+        Fill in the search terms below, then click <strong>Search</strong> on the website and select from the results.
+      </p>
+      <div class="field-group">
+        <label for="industrySearch">Industry keyword</label>
+        <input type="text" id="industrySearch" data-field="industrySearch" placeholder="e.g. Information Technology">
+        <span class="field-hint">Enter part or all of your workplace's main activity</span>
+      </div>
+      <div class="field-group">
+        <label for="occupationSearch">Occupation keyword</label>
+        <input type="text" id="occupationSearch" data-field="occupationSearch" placeholder="e.g. Software Engineer">
+        <span class="field-hint">Enter part or all of your job title</span>
+      </div>
+    </div>
+
+    <!-- ===== HEALTH TAB ===== -->
+    <div class="tab-content" id="tab-health">
+      <div class="field-group">
+        <label>Renal dialysis required?</label>
+        <select data-field="renalDialysis">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Active tuberculosis (TB)?</label>
+        <select data-field="tuberculosis">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Cancer?</label>
+        <select data-field="cancer">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Heart disease?</label>
+        <select data-field="heartDisease">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Mental/physical/intellectual disability?</label>
+        <select data-field="disability">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Hospitalisation required?</label>
+        <select data-field="hospitalisation">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Residential care required?</label>
+        <select data-field="residentialCare">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Health details (if yes to any above)</label>
+        <textarea data-field="healthDetails" rows="3" style="width:100%;resize:vertical;"></textarea>
+      </div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
+      <div class="field-group">
+        <label>Spent 3+ months in high TB risk country?</label>
+        <select data-field="tbRisk">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ===== CHARACTER TAB ===== -->
+    <div class="tab-content" id="tab-character">
+      <div class="field-group">
+        <label>Sentenced to imprisonment 5+ years?</label>
+        <select data-field="imprisonment5Years">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Convicted &amp; imprisoned 12+ months (last 10 yrs)?</label>
+        <select data-field="imprisonment12Months">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Ever deported from any country (excl. NZ)?</label>
+        <select data-field="deported">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Deportation date</label>
+        <input type="text" data-field="deportedDate" placeholder="e.g. 15 June, 2020">
+        <span class="field-hint">Format: d Month, yyyy</span>
+      </div>
+      <div class="field-group">
+        <label>Deportation country</label>
+        <select data-field="deportedCountry">
+          <option value="">-- Select --</option>
+        </select>
+      </div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
+      <div class="field-group">
+        <label>Charged with any offence?</label>
+        <select data-field="charged">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Convicted of any offence?</label>
+        <select data-field="convicted">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Currently under investigation?</label>
+        <select data-field="underInvestigation">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Excluded/refused entry from any country?</label>
+        <select data-field="excluded">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Removed/asked to leave any country?</label>
+        <select data-field="removed">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Details (if yes to any above)</label>
+        <textarea data-field="characterDetails" rows="3" style="width:100%;resize:vertical;"></textarea>
+      </div>
+    </div>
+
+    <!-- ===== ADVISER TAB ===== -->
+    <div class="tab-content" id="tab-adviser">
+      <h3 style="margin-top:0;font-size:14px;color:#1a5276;">Adviser Details</h3>
+      <div class="field-group">
+        <label>Adviser Type</label>
+        <select data-field="adviserType">
+          <option value="">-- Select --</option>
+          <option value="1">Licensed</option>
+          <option value="2">Exempt</option>
+          <option value="3">Unlicensed</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Adviser Family Name</label>
+        <input type="text" data-field="adviserFamilyName">
+      </div>
+      <div class="field-group">
+        <label>Adviser Given Name 1</label>
+        <input type="text" data-field="adviserGivenName1">
+      </div>
+      <div class="field-group">
+        <label>Adviser Given Name 2</label>
+        <input type="text" data-field="adviserGivenName2">
+      </div>
+      <div class="field-group">
+        <label>Company/Organisation Name</label>
+        <input type="text" data-field="adviserCompany">
+      </div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
+      <h3 style="font-size:14px;color:#1a5276;">Adviser Address</h3>
+      <div class="field-group">
+        <label>Street Number</label>
+        <input type="text" data-field="adviserStreetNumber">
+      </div>
+      <div class="field-group">
+        <label>Street Name</label>
+        <input type="text" data-field="adviserStreetName">
+      </div>
+      <div class="field-group">
+        <label>Suburb</label>
+        <input type="text" data-field="adviserSuburb">
+      </div>
+      <div class="field-group">
+        <label>City</label>
+        <input type="text" data-field="adviserCity">
+      </div>
+      <div class="field-group">
+        <label>Province/State</label>
+        <input type="text" data-field="adviserProvinceState">
+      </div>
+      <div class="field-group">
+        <label>PIN/ZIP Code</label>
+        <input type="text" data-field="adviserPostalCode">
+      </div>
+      <div class="field-group">
+        <label>Country</label>
+        <input type="text" data-field="adviserCountry" placeholder="New Zealand" value="New Zealand">
+        <span class="field-hint">Fixed as New Zealand on the form</span>
+      </div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
+      <h3 style="font-size:14px;color:#1a5276;">Adviser Contact</h3>
+      <div class="field-group">
+        <label>Phone</label>
+        <input type="text" data-field="adviserPhone">
+      </div>
+      <div class="field-group">
+        <label>Phone (DDI)</label>
+        <input type="text" data-field="adviserPhoneDdi">
+      </div>
+      <div class="field-group">
+        <label>Phone (mobile)</label>
+        <input type="text" data-field="adviserPhoneMobile">
+      </div>
+      <div class="field-group">
+        <label>Fax</label>
+        <input type="text" data-field="adviserFax">
+      </div>
+      <div class="field-group">
+        <label>Email</label>
+        <input type="text" data-field="adviserEmail">
+      </div>
+      <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
+      <div class="field-group">
+        <label>Authorise adviser to act on your behalf?</label>
+        <select data-field="adviserActOnBehalf">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Adviser ordinarily resident in NZ?</label>
+        <select data-field="adviserOrdinarilyResident">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ===== WHS SPECIFIC TAB ===== -->
+    <div class="tab-content" id="tab-whs">
+      <div class="field-group">
+        <label>Previously issued a NZ Working Holiday Visa?</label>
+        <select data-field="previousWhsVisa">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Sufficient funds for Working Holiday?</label>
+        <select data-field="sufficientFunds">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Intended travel date to NZ</label>
+        <input type="text" data-field="intendedTravelDate" placeholder="e.g. 15 December, 2026">
+        <span class="field-hint">Format: d Month, yyyy</span>
+      </div>
+      <div class="field-group">
+        <label>Been to NZ before?</label>
+        <select data-field="beenToNz">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>If yes, when?</label>
+        <input type="text" data-field="whenInNz" placeholder="e.g. 15 March, 2024">
+        <span class="field-hint">Format: d Month, yyyy</span>
+      </div>
+      <div class="field-group">
+        <label>Sufficient funds for outward ticket?</label>
+        <select data-field="sufficientFundsTicket">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>Meet specific scheme requirements?</label>
+        <select data-field="meetsRequirements">
+          <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="saveBtn" class="btn btn-primary">Save Profile</button>
+      <button id="fillBtn" class="btn btn-success">Fill Form on Page</button>
+      <button id="clearBtn" class="btn btn-danger">Clear All</button>
+    </div>
+
+    <div id="status" class="status"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
