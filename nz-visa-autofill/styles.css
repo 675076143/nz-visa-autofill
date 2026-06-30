@@ -40,15 +40,30 @@ header .subtitle {
   display: flex;
   gap: 4px;
   margin-bottom: 12px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  padding-bottom: 2px;
+}
+
+.tab-bar::-webkit-scrollbar {
+  height: 3px;
+}
+
+.tab-bar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
 }
 
 .tab-btn {
-  flex: 1;
-  padding: 8px 4px;
+  flex: 0 0 auto;
+  padding: 8px 8px;
   border: 1px solid #ccc;
   background: #e8ecf0;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
   border-radius: 4px 4px 0 0;
   color: #555;
