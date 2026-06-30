@@ -39,6 +39,45 @@ The extension uses `chrome.storage.local` to persist profile data. When you clic
 - jQuery UI datepickers — sets value + triggers `datepicker('setDate')`
 - Textareas — direct value assignment + events
 
+## Security Audit
+
+**Status: ✅ No issues found**
+
+All data stays in your browser. The extension has been audited for information leakage risks:
+
+| Check | Result | Detail |
+|---|---|---|
+| Data storage | ✅ Local only | Uses `chrome.storage.local` — never leaves your browser, not synced to cloud |
+| Network calls | ✅ None | Zero `fetch` / `XMLHttpRequest` calls in the entire codebase |
+| Third-party endpoints | ✅ None | No analytics, telemetry, CDN, or external API endpoints |
+| Permissions | ✅ Minimal | Only `storage` — no `cookies`, `webRequest`, `tabs`, `scripting` |
+| Host permissions | ✅ Narrow scope | Matches only `onlineservices.immigration.govt.nz/WorkingHoliday/Wizard/*` |
+| Content script scope | ✅ Specific | Only injects on the NZ immigration form pages |
+| External resources | ✅ None | All HTML/CSS/JS bundled locally, no CDN or iframes |
+| Data exfiltration | ✅ None | No `XMLHttpRequest`, `fetch`, `sendBeacon`, or WebSocket |
+| Key logging / input capture | ✅ None | No `addEventListener('keydown')` or passive input monitoring |
+
+**How data flows:**
+
+```
+Popup (popup.js)              Content Script (content.js)
+    │                                  │
+    │  User fills 78 fields            │
+    │  Click "Save Profile"            │
+    ├──→ chrome.storage.local ───→ persists in browser only
+    │                                  │
+    │  Click "Fill Form on Page"       │
+    ├──→ chrome.tabs.sendMessage ──→  receives profile data
+    │                    ┌─────────────┤
+    │                    │  Maps keys to ASP.NET control IDs
+    │                    │  Sets values via native DOM APIs
+    │                    │  Triggers Select2 / datepicker sync
+    │                    └─────────────┤
+    │←── response {success, filled} ──┤
+```
+
+No data is ever sent to any server other than the NZ Immigration website itself (when you manually click SAVE on the form page).
+
 ## Files
 
 ```
