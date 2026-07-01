@@ -1,3 +1,30 @@
+// Date fields that need format conversion (yyyy-MM-dd ↔ d Month, yyyy)
+const DATE_FIELDS = new Set([
+  'dateOfBirth', 'passportExpiryDate', 'secondIdIssueDate',
+  'secondIdExpiryDate', 'deportedDate', 'intendedTravelDate', 'whenInNz'
+]);
+
+const MONTHS = ['January','February','March','April','May','June',
+                'July','August','September','October','November','December'];
+
+function toWebsiteDate(isoStr) {
+  if (!isoStr || !/^\d{4}-\d{2}-\d{2}$/.test(isoStr)) return isoStr;
+  const [y, m, d] = isoStr.split('-').map(Number);
+  return `${d} ${MONTHS[m-1]}, ${y}`;
+}
+
+function toInputDate(str) {
+  if (!str) return '';
+  if (/^\d{4}-\d{2}-\d{2}$/.test(str)) return str;
+  const m = str.match(/^(\d+)\s+(\w+),?\s+(\d{4})$/);
+  if (!m) return '';
+  const monthIdx = MONTHS.indexOf(m[2]);
+  if (monthIdx === -1) return '';
+  const d = String(m[1]).padStart(2, '0');
+  const month = String(monthIdx + 1).padStart(2, '0');
+  return `${m[3]}-${month}-${d}`;
+}
+
 // Country list shared across dropdowns
 const COUNTRIES = [
   ["4","Afghanistan"],["5","Albania"],["6","Algeria"],["7","American Samoa"],["8","Andorra"],
@@ -94,7 +121,8 @@ function loadProfile() {
     if (result.visaProfile) {
       Object.entries(result.visaProfile).forEach(([key, value]) => {
         const el = document.querySelector(`[data-field="${key}"]`);
-        if (el) el.value = value || '';
+        if (!el || !value) return;
+        el.value = DATE_FIELDS.has(key) ? toInputDate(value) : value;
       });
       toggleOtherTitle();
       showStatus('Profile loaded successfully', 'info');
@@ -106,7 +134,8 @@ function loadProfile() {
 function saveProfile() {
   const profile = {};
   document.querySelectorAll('[data-field]').forEach(el => {
-    profile[el.dataset.field] = el.value;
+    const key = el.dataset.field;
+    profile[key] = DATE_FIELDS.has(key) ? toWebsiteDate(el.value) : el.value;
   });
   chrome.storage.local.set({ visaProfile: profile }, () => {
     showStatus('Profile saved successfully!', 'success');
@@ -136,7 +165,8 @@ function fillForm() {
     // First save then fill
     const profile = {};
     document.querySelectorAll('[data-field]').forEach(el => {
-      profile[el.dataset.field] = el.value;
+      const key = el.dataset.field;
+      profile[key] = DATE_FIELDS.has(key) ? toWebsiteDate(el.value) : el.value;
     });
     chrome.storage.local.set({ visaProfile: profile }, () => {
       chrome.tabs.sendMessage(tab.id, { action: 'fillForm', data: profile }, (response) => {
