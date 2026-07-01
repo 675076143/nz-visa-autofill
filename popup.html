@@ -137,7 +137,7 @@
         <input type="text" id="fax" data-field="fax">
       </div>
       <div class="field-group">
-        <label for="email">Email address <span class="required">*</span></label>
+        <label for="email">Email address</label>
         <input type="email" id="email" data-field="email" placeholder="e.g. your@email.com">
       </div>
       <div class="field-group">
@@ -177,7 +177,7 @@
       <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
       <h3 style="font-size:14px;color:#1a5276;">Second Form of Identification</h3>
       <div class="field-group">
-        <label for="secondIdType">Identification Type</label>
+        <label for="secondIdType">Identification Type <span class="required">*</span></label>
         <select id="secondIdType" data-field="secondIdType">
           <option value="">-- Select --</option>
           <option value="1">Driver License</option>
@@ -186,7 +186,7 @@
         </select>
       </div>
       <div class="field-group">
-        <label for="secondIdIssueDate">Date Document was Issued</label>
+        <label for="secondIdIssueDate">Date Document was Issued <span class="required">*</span></label>
         <input type="text" id="secondIdIssueDate" data-field="secondIdIssueDate" placeholder="e.g. 15 March, 2020">
         <span class="field-hint">Format: d Month, yyyy</span>
       </div>
@@ -217,43 +217,43 @@
     <!-- ===== HEALTH TAB ===== -->
     <div class="tab-content" id="tab-health">
       <div class="field-group">
-        <label>Renal dialysis required?</label>
+        <label>Renal dialysis required? <span class="required">*</span></label>
         <select data-field="renalDialysis">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Active tuberculosis (TB)?</label>
+        <label>Active tuberculosis (TB)? <span class="required">*</span></label>
         <select data-field="tuberculosis">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Cancer?</label>
+        <label>Cancer? <span class="required">*</span></label>
         <select data-field="cancer">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Heart disease?</label>
+        <label>Heart disease? <span class="required">*</span></label>
         <select data-field="heartDisease">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Mental/physical/intellectual disability?</label>
+        <label>Mental/physical/intellectual disability? <span class="required">*</span></label>
         <select data-field="disability">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Hospitalisation required?</label>
+        <label>Hospitalisation required? <span class="required">*</span></label>
         <select data-field="hospitalisation">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Residential care required?</label>
+        <label>Residential care required? <span class="required">*</span></label>
         <select data-field="residentialCare">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
@@ -264,7 +264,7 @@
       </div>
       <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
       <div class="field-group">
-        <label>Spent 3+ months in high TB risk country?</label>
+        <label>Spent 3+ months in high TB risk country? <span class="required">*</span></label>
         <select data-field="tbRisk">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
@@ -274,19 +274,19 @@
     <!-- ===== CHARACTER TAB ===== -->
     <div class="tab-content" id="tab-character">
       <div class="field-group">
-        <label>Sentenced to imprisonment 5+ years?</label>
+        <label>Sentenced to imprisonment 5+ years? <span class="required">*</span></label>
         <select data-field="imprisonment5Years">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Convicted &amp; imprisoned 12+ months (last 10 yrs)?</label>
+        <label>Convicted &amp; imprisoned 12+ months (last 10 yrs)? <span class="required">*</span></label>
         <select data-field="imprisonment12Months">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Ever deported from any country (excl. NZ)?</label>
+        <label>Ever deported from any country (excl. NZ)? <span class="required">*</span></label>
         <select data-field="deported">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
@@ -304,31 +304,31 @@
       </div>
       <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
       <div class="field-group">
-        <label>Charged with any offence?</label>
+        <label>Charged with any offence? <span class="required">*</span></label>
         <select data-field="charged">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Convicted of any offence?</label>
+        <label>Convicted of any offence? <span class="required">*</span></label>
         <select data-field="convicted">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Currently under investigation?</label>
+        <label>Currently under investigation? <span class="required">*</span></label>
         <select data-field="underInvestigation">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Excluded/refused entry from any country?</label>
+        <label>Excluded/refused entry from any country? <span class="required">*</span></label>
         <select data-field="excluded">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Removed/asked to leave any country?</label>
+        <label>Removed/asked to leave any country? <span class="required">*</span></label>
         <select data-field="removed">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
@@ -343,7 +343,7 @@
     <div class="tab-content" id="tab-adviser">
       <h3 style="margin-top:0;font-size:14px;color:#1a5276;">Adviser Details</h3>
       <div class="field-group">
-        <label>Adviser Type</label>
+        <label>Adviser Type <span class="required">*</span></label>
         <select data-field="adviserType">
           <option value="">-- Select --</option>
           <option value="1">Licensed</option>
@@ -352,7 +352,7 @@
         </select>
       </div>
       <div class="field-group">
-        <label>Adviser Family Name</label>
+        <label>Adviser Family Name <span class="required">*</span></label>
         <input type="text" data-field="adviserFamilyName">
       </div>
       <div class="field-group">
@@ -364,7 +364,7 @@
         <input type="text" data-field="adviserGivenName2">
       </div>
       <div class="field-group">
-        <label>Company/Organisation Name</label>
+        <label>Company/Organisation Name <span class="required">*</span></label>
         <input type="text" data-field="adviserCompany">
       </div>
       <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
@@ -374,7 +374,7 @@
         <input type="text" data-field="adviserStreetNumber">
       </div>
       <div class="field-group">
-        <label>Street Name</label>
+        <label>Street Name <span class="required">*</span></label>
         <input type="text" data-field="adviserStreetName">
       </div>
       <div class="field-group">
@@ -382,7 +382,7 @@
         <input type="text" data-field="adviserSuburb">
       </div>
       <div class="field-group">
-        <label>City</label>
+        <label>City <span class="required">*</span></label>
         <input type="text" data-field="adviserCity">
       </div>
       <div class="field-group">
@@ -422,7 +422,7 @@
       </div>
       <hr style="margin:12px 0;border:none;border-top:1px solid #ddd;">
       <div class="field-group">
-        <label>Authorise adviser to act on your behalf?</label>
+        <label>Authorise adviser to act on your behalf? <span class="required">*</span></label>
         <select data-field="adviserActOnBehalf">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
@@ -438,24 +438,24 @@
     <!-- ===== WHS SPECIFIC TAB ===== -->
     <div class="tab-content" id="tab-whs">
       <div class="field-group">
-        <label>Previously issued a NZ Working Holiday Visa?</label>
+        <label>Previously issued a NZ Working Holiday Visa? <span class="required">*</span></label>
         <select data-field="previousWhsVisa">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Sufficient funds for Working Holiday?</label>
+        <label>Sufficient funds for Working Holiday? <span class="required">*</span></label>
         <select data-field="sufficientFunds">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Intended travel date to NZ</label>
+        <label>Intended travel date to NZ <span class="required">*</span></label>
         <input type="text" data-field="intendedTravelDate" placeholder="e.g. 15 December, 2026">
         <span class="field-hint">Format: d Month, yyyy</span>
       </div>
       <div class="field-group">
-        <label>Been to NZ before?</label>
+        <label>Been to NZ before? <span class="required">*</span></label>
         <select data-field="beenToNz">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
@@ -466,13 +466,13 @@
         <span class="field-hint">Format: d Month, yyyy</span>
       </div>
       <div class="field-group">
-        <label>Sufficient funds for outward ticket?</label>
+        <label>Sufficient funds for outward ticket? <span class="required">*</span></label>
         <select data-field="sufficientFundsTicket">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
       </div>
       <div class="field-group">
-        <label>Meet specific scheme requirements?</label>
+        <label>Meet specific scheme requirements? <span class="required">*</span></label>
         <select data-field="meetsRequirements">
           <option value="">-- Select --</option><option value="No">No</option><option value="Yes">Yes</option>
         </select>
